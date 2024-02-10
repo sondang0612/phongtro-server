@@ -1,5 +1,5 @@
 const express = require("express");
-const priceController = require("../controllers/price");
+const priceController = require("../src/controllers/price");
 const router = express.Router();
 
 router.get("/all", priceController.getPrices);
