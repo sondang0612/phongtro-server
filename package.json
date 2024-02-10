@@ -1,0 +1,33 @@
+{
+  "name": "phongtro-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node server.js",
+    "migrate": "cd ./src && npx sequelize db:migrate && cd ../"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "mysql2": "^3.9.1",
+    "nodemon": "^3.0.3",
+    "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.36.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/node": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "sequelize-cli": "^6.6.2"
+  }
+}

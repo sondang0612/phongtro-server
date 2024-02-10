@@ -1,0 +1,6 @@
+- install MYSQL
+- npm install backend project
+- create schema called phongtro123 on MYSQL
+- npm run migrate (migrate from js code to table on MYSQL)
+- npm start
+- run (localhost:5000/v1/api/insert) api to insert data to db

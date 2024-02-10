@@ -1,0 +1,32 @@
+{
+  "development": {
+    "username": "db_phongtro123_9bjn_user",
+    "password": "dwh1gbEp8EQd5QABB2oxI22IKdtE8bba",
+    "database": "db_phongtro123_9bjn",
+    "host": "dpg-cn2sr1gl5elc73cit0lg-a.singapore-postgres.render.com",
+    "dialect": "postgres",
+    "logging": false,
+    "port": 5432,
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  },
+  "production": {
+    "username": "db_phongtro123_9bjn_user",
+    "password": "dwh1gbEp8EQd5QABB2oxI22IKdtE8bba",
+    "database": "db_phongtro123_9bjn",
+    "host": "dpg-cn2sr1gl5elc73cit0lg-a.singapore-postgres.render.com",
+    "dialect": "postgres",
+    "logging": false,
+    "port": 5432,
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  }
+}
