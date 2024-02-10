@@ -17,7 +17,8 @@ const initRoutes = (app) => {
   app.use("/api/v1/province", provinceRouter);
   app.use("/api/v1/user", userRouter);
 
-  return app.use("/", (req, res) => {
+  app.use("/", (req, res) => {
+    req.status(200).json({ msg: "on" });
     console.log("server on...");
   });
 };
