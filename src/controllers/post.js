@@ -1,7 +1,7 @@
-import * as postService from "../services/post";
-import removeNullFromObject from "../utils/removeNullFromObject";
+const postService = require("../services/post");
+const removeNullFromObject = require("../utils/removeNullFromObject");
 
-export const getPosts = async (req, res) => {
+const getPosts = async (req, res) => {
   try {
     const response = await postService.getPostsService();
     res.status(200).json(response);
@@ -13,7 +13,7 @@ export const getPosts = async (req, res) => {
   }
 };
 
-export const getPost = async (req, res) => {
+const getPost = async (req, res) => {
   const { id } = req.params;
   try {
     const response = await postService.getPostService(id);
@@ -26,7 +26,7 @@ export const getPost = async (req, res) => {
   }
 };
 
-export const getPostsByCategory = async (req, res) => {
+const getPostsByCategory = async (req, res) => {
   const { categoryCode } = req.params;
   try {
     const response = await postService.getPostsByCategoryService(categoryCode);
@@ -39,7 +39,7 @@ export const getPostsByCategory = async (req, res) => {
   }
 };
 
-export const getPostsLimit = async (req, res) => {
+const getPostsLimit = async (req, res) => {
   const { page, ...query } = req.query;
   const { priceCode, areaCode, categoryCode, provinceCode } = query;
   try {
@@ -55,7 +55,7 @@ export const getPostsLimit = async (req, res) => {
     });
   }
 };
-export const getNewestPosts = async (req, res) => {
+const getNewestPosts = async (req, res) => {
   try {
     const response = await postService.getNewestPostsService();
     res.status(200).json(response);
@@ -67,7 +67,7 @@ export const getNewestPosts = async (req, res) => {
   }
 };
 
-export const createPost = async (req, res) => {
+const createPost = async (req, res) => {
   const { categoryCode, userId, title, priceNumber, areaNumber, label } =
     req.body;
   if (
@@ -94,7 +94,7 @@ export const createPost = async (req, res) => {
   }
 };
 
-export const getMyPostsLimit = async (req, res) => {
+const getMyPostsLimit = async (req, res) => {
   const { id } = req.user;
   try {
     const response = await postService.getMyPostsService(id);
@@ -107,7 +107,7 @@ export const getMyPostsLimit = async (req, res) => {
   }
 };
 
-export const deleteMyPost = async (req, res) => {
+const deleteMyPost = async (req, res) => {
   const { postId } = req.params;
   try {
     const response = await postService.deleteMyPostService(postId);
@@ -118,4 +118,15 @@ export const deleteMyPost = async (req, res) => {
       msg: "Fail at post controller: " + error,
     });
   }
+};
+
+module.exports = {
+  getPost,
+  getPosts,
+  getPostsByCategory,
+  getPostsLimit,
+  getNewestPosts,
+  createPost,
+  getMyPostsLimit,
+  deleteMyPost,
 };

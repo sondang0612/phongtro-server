@@ -19,5 +19,4 @@ const generateCode = (value) => {
   }
   return `${value.charAt(2)}${output}`.toUpperCase();
 };
-
-export default generateCode;
+module.exports = generateCode;

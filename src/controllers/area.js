@@ -1,6 +1,5 @@
-import * as areaService from "../services/area";
-
-export const getAreas = async (req, res) => {
+const areaService = require("../services/area");
+const getAreas = async (req, res) => {
   try {
     const response = await areaService.getAreasService();
     res.status(200).json(response);
@@ -12,7 +11,7 @@ export const getAreas = async (req, res) => {
   }
 };
 
-export const getAreaByCode = async (req, res) => {
+const getAreaByCode = async (req, res) => {
   const { areaCode } = req.params;
   try {
     const response = await areaService.getAreaByCodeService(areaCode);
@@ -23,4 +22,9 @@ export const getAreaByCode = async (req, res) => {
       msg: "Fail at area controller: " + error,
     });
   }
+};
+
+module.exports = {
+  getAreas,
+  getAreaByCode,
 };

@@ -1,6 +1,6 @@
-import * as insertService from "../services/insert";
+const insertService = require("../services/insert");
 
-export const insert = async (req, res) => {
+const insert = async (req, res) => {
   try {
     const response = await insertService.insert();
     return res.status(200).json(response);
@@ -11,3 +11,5 @@ export const insert = async (req, res) => {
     });
   }
 };
+
+module.exports = { insert };

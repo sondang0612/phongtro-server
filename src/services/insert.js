@@ -1,14 +1,14 @@
-import { v4 } from "uuid";
-import chothuecanho from "../data/chothuecanho.json";
-import chothuematbang from "../data/chothuematbang.json";
-import chothuephongtro from "../data/chothuephongtro.json";
-import nhachothue from "../data/nhachothue.json";
-import generateCode from "../utils/generateCode";
-import { getNumberFromString } from "../utils/common";
+const { v4 } = require("uuid");
+const chothuecanho = require("../data/chothuecanho.json");
+const chothuematbang = require("../data/chothuematbang.json");
+const chothuephongtro = require("../data/chothuephongtro.json");
+const nhachothue = require("../data/nhachothue.json");
+const generateCode = require("../utils/generateCode");
+const { getNumberFromString } = require("../utils/common");
 
-import { dataArea, dataPrice } from "../utils/data";
-import db from "../models";
-import { hashPassword } from "./auth";
+const { dataArea, dataPrice } = require("../utils/data");
+const db = require("../models");
+const { hashPassword } = require("./auth");
 
 const data = [
   {
@@ -115,7 +115,7 @@ const insertDataBody = async (data, categoryCode) => {
     });
   });
 };
-export const insert = () =>
+const insert = () =>
   new Promise(async (resolve, reject) => {
     try {
       dataPrice.forEach(async (item, index) => {
@@ -148,3 +148,5 @@ export const insert = () =>
       reject(error);
     }
   });
+
+module.exports = { insert };

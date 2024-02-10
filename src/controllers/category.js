@@ -1,6 +1,6 @@
-import * as categoryService from "../services/category";
+const categoryService = require("../services/category");
 
-export const getCategories = async (req, res) => {
+const getCategories = async (req, res) => {
   try {
     const response = await categoryService.getCategoriesService();
     res.status(200).json(response);
@@ -12,7 +12,7 @@ export const getCategories = async (req, res) => {
   }
 };
 
-export const getCategoryByCode = async (req, res) => {
+const getCategoryByCode = async (req, res) => {
   const { categoryCode } = req.params;
   try {
     const response = await categoryService.getCategoryByCodeService(
@@ -26,3 +26,5 @@ export const getCategoryByCode = async (req, res) => {
     });
   }
 };
+
+module.exports = { getCategories, getCategoryByCode };

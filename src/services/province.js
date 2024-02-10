@@ -1,6 +1,6 @@
-import db from "../models";
+const db = require("../models");
 
-export const getProvincesService = () =>
+const getProvincesService = () =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Province.findAll({
@@ -17,7 +17,7 @@ export const getProvincesService = () =>
     }
   });
 
-export const getProvinceByCodeService = (provinceCode) =>
+const getProvinceByCodeService = (provinceCode) =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Province.findOne({
@@ -34,3 +34,5 @@ export const getProvinceByCodeService = (provinceCode) =>
       reject(error);
     }
   });
+
+module.exports = { getProvincesService, getProvinceByCodeService };

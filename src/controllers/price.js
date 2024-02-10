@@ -1,6 +1,6 @@
-import * as priceService from "../services/price";
+const priceService = require("../services/price");
 
-export const getPrices = async (req, res) => {
+const getPrices = async (req, res) => {
   try {
     const response = await priceService.getPricesService();
     res.status(200).json(response);
@@ -12,7 +12,7 @@ export const getPrices = async (req, res) => {
   }
 };
 
-export const getPriceByCode = async (req, res) => {
+const getPriceByCode = async (req, res) => {
   const { priceCode } = req.params;
   try {
     const response = await priceService.getPriceByCodeService(priceCode);
@@ -24,3 +24,5 @@ export const getPriceByCode = async (req, res) => {
     });
   }
 };
+
+module.exports = { getPrices, getPriceByCode };

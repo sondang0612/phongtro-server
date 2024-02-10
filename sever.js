@@ -1,7 +1,7 @@
-import cors from "cors";
-import express from "express";
-import connectDB from "./src/config/connectDB";
-import initRoutes from "./routes";
+const cors = require("cors");
+const express = require("express");
+const connectDB = require("./src/config/connectDB");
+const initRoutes = require("./src/routes");
 require("dotenv").config();
 const app = express();
 app.use(
@@ -21,4 +21,4 @@ const listener = app.listen(port, () => {
   console.log(`Server is running on the port ${listener.address().port}....`);
 });
 
-export default app;
+module.exports = app;

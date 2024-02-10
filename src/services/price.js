@@ -1,6 +1,6 @@
-import db from "../models";
+const db = require("../models");
 
-export const getPricesService = () =>
+const getPricesService = () =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Price.findAll({
@@ -17,7 +17,7 @@ export const getPricesService = () =>
     }
   });
 
-export const getPriceByCodeService = (priceCode) =>
+const getPriceByCodeService = (priceCode) =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Price.findOne({
@@ -34,3 +34,5 @@ export const getPriceByCodeService = (priceCode) =>
       reject(error);
     }
   });
+
+module.exports = { getPricesService, getPriceByCodeService };

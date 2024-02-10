@@ -1,11 +1,11 @@
-import authRouter from "./auth";
-import insertRouter from "./insert";
-import categoryRouter from "./category";
-import postRouter from "./post";
-import priceRouter from "./price";
-import areaRouter from "./area";
-import provinceRouter from "./province";
-import userRouter from "./user";
+const authRouter = require("./auth");
+const insertRouter = require("./insert");
+const categoryRouter = require("./category");
+const postRouter = require("./post");
+const priceRouter = require("./price");
+const areaRouter = require("./area");
+const provinceRouter = require("./province");
+const userRouter = require("./user");
 
 const initRoutes = (app) => {
   app.use("/api/v1/auth", authRouter);
@@ -23,4 +23,4 @@ const initRoutes = (app) => {
   });
 };
 
-export default initRoutes;
+module.exports = initRoutes;

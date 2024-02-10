@@ -1,6 +1,6 @@
-import db from "../models";
+const db = require("../models");
 
-export const getAreasService = () =>
+const getAreasService = () =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Area.findAll({
@@ -17,7 +17,7 @@ export const getAreasService = () =>
     }
   });
 
-export const getAreaByCodeService = (areaCode) =>
+const getAreaByCodeService = (areaCode) =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Area.findOne({
@@ -34,3 +34,5 @@ export const getAreaByCodeService = (areaCode) =>
       reject(error);
     }
   });
+
+module.exports = { getAreaByCodeService, getAreasService };

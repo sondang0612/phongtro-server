@@ -1,6 +1,6 @@
-import db from "../models";
+const db = require("../models");
 
-export const getCategoriesService = () =>
+const getCategoriesService = () =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Category.findAll({
@@ -17,7 +17,7 @@ export const getCategoriesService = () =>
     }
   });
 
-export const getCategoryByCodeService = (categoryCode) =>
+const getCategoryByCodeService = (categoryCode) =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Category.findOne({
@@ -25,6 +25,7 @@ export const getCategoryByCodeService = (categoryCode) =>
         raw: true,
         attributes: ["code", "value", "label"],
       });
+
       resolve({
         err: response ? 0 : 1,
         msg: response ? "Ok" : "Failed to get categories",
@@ -34,3 +35,5 @@ export const getCategoryByCodeService = (categoryCode) =>
       reject(error);
     }
   });
+
+module.exports = { getCategoriesService, getCategoryByCodeService };

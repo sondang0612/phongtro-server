@@ -1,8 +1,8 @@
-import express from "express";
-import * as provinceController from "../src/controllers/province";
+const express = require("express");
+const provinceController = require("../controllers/province");
 const router = express.Router();
 
 router.get("/all", provinceController.getProvinces);
 router.get("/:provinceCode", provinceController.getProvinceByCode);
 
-export default router;
+module.exports = router;

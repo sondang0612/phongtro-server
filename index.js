@@ -1,13 +1,2 @@
-const express = require("express");
-
-const app = express();
-
-app.get("/", (req, res) => {
-  res.json({ msg: "on" });
-});
-
-const listen = app.listen(5000, () => {
-  console.log("on");
-});
-
+const app = require("./sever");
 module.exports = app;

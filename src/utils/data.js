@@ -1,4 +1,4 @@
-import generateCode from "./generateCode";
+const generateCode = require("./generateCode");
 const prices = [
   {
     min: 0,
@@ -75,11 +75,13 @@ const areas = [
   },
 ];
 
-export const dataPrice = prices.map((item) => ({
+const dataPrice = prices.map((item) => ({
   ...item,
   code: generateCode(item.value),
 }));
-export const dataArea = areas.map((item) => ({
+const dataArea = areas.map((item) => ({
   ...item,
   code: generateCode(item.value),
 }));
+
+module.exports = { dataPrice, dataArea };

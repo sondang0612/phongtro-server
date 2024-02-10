@@ -1,6 +1,6 @@
-import * as authService from "../services/auth";
+const authService = require("../services/auth");
 
-export const register = async (req, res) => {
+const register = async (req, res) => {
   const { name, phone, password } = req.body;
   try {
     if (!name || !phone || !password) {
@@ -19,7 +19,7 @@ export const register = async (req, res) => {
   }
 };
 
-export const login = async (req, res) => {
+const login = async (req, res) => {
   const { phone, password } = req.body;
   try {
     if (!phone || !password) {
@@ -37,3 +37,5 @@ export const login = async (req, res) => {
     });
   }
 };
+
+module.exports = { register, login };

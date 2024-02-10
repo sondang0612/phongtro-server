@@ -1,6 +1,6 @@
-import * as userService from "../services/user";
+const userService = require("../services/user");
 
-export const getUser = async (req, res) => {
+const getUser = async (req, res) => {
   const { id } = req.params;
   try {
     const response = await userService.getUserService(id);
@@ -13,7 +13,7 @@ export const getUser = async (req, res) => {
   }
 };
 
-export const getCurrent = async (req, res) => {
+const getCurrent = async (req, res) => {
   const { id } = req.user;
   try {
     const response = await userService.getUserService(id);
@@ -25,3 +25,5 @@ export const getCurrent = async (req, res) => {
     });
   }
 };
+
+module.exports = { getCurrent, getUser };

@@ -1,12 +1,12 @@
-import db from "../models";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import { v4 } from "uuid";
+const db = require("../models");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const { v4 } = require("uuid");
 require("dotenv").config();
-export const hashPassword = (password) =>
+const hashPassword = (password) =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(12));
 
-export const registerService = ({ phone, password, name }) =>
+const registerService = ({ phone, password, name }) =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.User.findOrCreate({
@@ -46,7 +46,7 @@ export const registerService = ({ phone, password, name }) =>
     }
   });
 
-export const loginService = ({ phone, password }) =>
+const loginService = ({ phone, password }) =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.User.findOne({
@@ -81,3 +81,9 @@ export const loginService = ({ phone, password }) =>
       reject(error);
     }
   });
+
+module.exports = {
+  hashPassword,
+  registerService,
+  loginService,
+};

@@ -1,6 +1,6 @@
-import express from "express";
-import * as postController from "../src/controllers/post";
-import verifyToken from "../src/middlewares/verifyToken";
+const express = require("express");
+const postController = require("../controllers/post");
+const verifyToken = require("../middlewares/verifyToken");
 const router = express.Router();
 
 router.get("/all", postController.getPosts);
@@ -13,4 +13,4 @@ router.use(verifyToken);
 router.post("/create", postController.createPost);
 router.get("/my-posts", postController.getMyPostsLimit);
 router.delete("/:postId", postController.deleteMyPost);
-export default router;
+module.exports = router;

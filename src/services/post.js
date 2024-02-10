@@ -1,10 +1,10 @@
-import { v4 } from "uuid";
-import db from "../models";
-import generateCode from "../utils/generateCode";
-import moment from "moment";
-import { Op } from "sequelize";
+const { v4 } = require("uuid");
+const db = require("../models");
+const generateCode = require("../utils/generateCode");
+const moment = require("moment");
+const { Op } = require("sequelize");
 
-export const getPostsService = () =>
+const getPostsService = () =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Post.findAll({
@@ -35,7 +35,7 @@ export const getPostsService = () =>
     }
   });
 
-export const getPostService = (id) =>
+const getPostService = (id) =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Post.findOne({
@@ -92,7 +92,7 @@ export const getPostService = (id) =>
     }
   });
 
-export const getPostsLimitService = (page, query) =>
+const getPostsLimitService = (page, query) =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Post.findAndCountAll({
@@ -153,8 +153,7 @@ export const getPostsLimitService = (page, query) =>
       reject(error);
     }
   });
-
-export const getNewestPostsService = () =>
+const getNewestPostsService = () =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Post.findAndCountAll({
@@ -188,7 +187,7 @@ export const getNewestPostsService = () =>
     }
   });
 
-export const createPostService = (body, userId) =>
+const createPostService = (body, userId) =>
   new Promise(async (resolve, reject) => {
     try {
       const attributesId = v4();
@@ -296,7 +295,7 @@ export const createPostService = (body, userId) =>
     }
   });
 
-export const getMyPostsService = (userId) =>
+const getMyPostsService = (userId) =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Post.findAndCountAll({
@@ -331,7 +330,7 @@ export const getMyPostsService = (userId) =>
     }
   });
 
-export const deleteMyPostService = (postId) =>
+const deleteMyPostService = (postId) =>
   new Promise(async (resolve, reject) => {
     try {
       await db.Post.destroy({
@@ -346,7 +345,7 @@ export const deleteMyPostService = (postId) =>
     }
   });
 
-export const getPostsByCategoryService = (categoryCode) =>
+const getPostsByCategoryService = (categoryCode) =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.Post.findAndCountAll({
@@ -379,3 +378,14 @@ export const getPostsByCategoryService = (categoryCode) =>
       reject(error);
     }
   });
+
+module.exports = {
+  getPostsService,
+  getPostService,
+  getPostsLimitService,
+  getNewestPostsService,
+  createPostService,
+  getMyPostsService,
+  deleteMyPostService,
+  getPostsByCategoryService,
+};

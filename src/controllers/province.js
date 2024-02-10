@@ -1,6 +1,6 @@
-import * as provinceService from "../services/province";
+const provinceService = require("../services/province");
 
-export const getProvinces = async (req, res) => {
+const getProvinces = async (req, res) => {
   try {
     const response = await provinceService.getProvincesService();
     res.status(200).json(response);
@@ -12,7 +12,7 @@ export const getProvinces = async (req, res) => {
   }
 };
 
-export const getProvinceByCode = async (req, res) => {
+const getProvinceByCode = async (req, res) => {
   const { provinceCode } = req.params;
   try {
     const response = await provinceService.getProvinceByCodeService(
@@ -26,3 +26,5 @@ export const getProvinceByCode = async (req, res) => {
     });
   }
 };
+
+module.exports = { getProvinces, getProvinceByCode };

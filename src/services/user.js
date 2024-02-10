@@ -1,6 +1,6 @@
-import db from "../models";
+const db = require("../models");
 
-export const getUserService = (id) =>
+const getUserService = (id) =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await db.User.findOne({
@@ -19,3 +19,5 @@ export const getUserService = (id) =>
       reject(error);
     }
   });
+
+module.exports = { getUserService };
