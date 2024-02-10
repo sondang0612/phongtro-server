@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "14x"
+  },
   "scripts": {
-    "start": "nodemon --exec babel-node server.js",
+    "start": "node --exec babel-node server.js",
     "migrate": "cd ./src && npx sequelize db:migrate && cd ../"
   },
   "keywords": [],
