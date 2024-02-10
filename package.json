@@ -2,12 +2,12 @@
   "name": "phongtro-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "engines": {
     "node": "18.x"
   },
   "scripts": {
-    "start": "node --exec babel-node server.js",
+    "start": "node --exec babel-node index.js",
     "migrate": "cd ./src && npx sequelize db:migrate && cd ../"
   },
   "keywords": [],
