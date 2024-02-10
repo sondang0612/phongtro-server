@@ -1,7 +1,7 @@
 import cors from "cors";
 import express from "express";
 import connectDB from "./src/config/connectDB";
-import initRoutes from "./src/routes";
+import initRoutes from "./routes";
 require("dotenv").config();
 const app = express();
 app.use(

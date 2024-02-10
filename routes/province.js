@@ -1,5 +1,5 @@
 import express from "express";
-import * as provinceController from "../controllers/province";
+import * as provinceController from "../src/controllers/province";
 const router = express.Router();
 
 router.get("/all", provinceController.getProvinces);

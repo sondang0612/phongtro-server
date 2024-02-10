@@ -1,6 +1,6 @@
 import express from "express";
-import * as postController from "../controllers/post";
-import verifyToken from "../middlewares/verifyToken";
+import * as postController from "../src/controllers/post";
+import verifyToken from "../src/middlewares/verifyToken";
 const router = express.Router();
 
 router.get("/all", postController.getPosts);
