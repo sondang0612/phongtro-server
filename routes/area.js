@@ -1,5 +1,5 @@
 const express = require("express");
-const areaController = require("../controllers/area");
+const areaController = require("../src/controllers/area");
 const router = express.Router();
 
 router.get("/all", areaController.getAreas);

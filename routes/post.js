@@ -1,6 +1,6 @@
 const express = require("express");
-const postController = require("../controllers/post");
-const verifyToken = require("../middlewares/verifyToken");
+const postController = require("../src/controllers/post");
+const verifyToken = require("../src/middlewares/verifyToken");
 const router = express.Router();
 
 router.get("/all", postController.getPosts);
