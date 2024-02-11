@@ -31,7 +31,6 @@
     "@babel/core": "^7.23.9",
     "@babel/node": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
-    "sequelize-cli": "^6.6.2",
-    "webpack-node-externals": "^3.0.0"
+    "sequelize-cli": "^6.6.2"
   }
 }
