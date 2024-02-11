@@ -1,5 +1,5 @@
 const express = require("express");
-const provinceController = require("../src/controllers/province");
+const provinceController = require("../controllers/province");
 const router = express.Router();
 
 router.get("/all", provinceController.getProvinces);

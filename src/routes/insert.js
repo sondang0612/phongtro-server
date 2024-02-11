@@ -1,5 +1,5 @@
 const express = require("express");
-const insertController = require("../src/controllers/insert");
+const insertController = require("../controllers/insert");
 const router = express.Router();
 
 router.post("/", insertController.insert);
