@@ -143,6 +143,46 @@ const insert = () =>
         });
       });
 
+      await db.Category.create({
+        code: "CTCH",
+        value: "Cho thuê căn hộ",
+        header: "Cho Thuê Căn Hộ Chung Cư, Giá Rẻ, View Đẹp, Mới Nhất 2024",
+        subheader:
+          "Cho thuê căn hộ - Kênh đăng tin cho thuê căn hộ số 1: giá rẻ, chính chủ, đầy đủ tiện nghi. Cho thuê chung cư với nhiều mức giá, diện tích cho thuê khác nhau.",
+        createdAt: new Date(), // Use the current timestamp
+        updatedAt: new Date(),
+      });
+
+      await db.Category.create({
+        code: "CTMB",
+        value: "Cho thuê mặt bằng",
+        header: "Cho Thuê Căn Hộ Chung Cư, Giá Rẻ, View Đẹp, Mới Nhất 2024",
+        subheader:
+          "Cho thuê căn hộ - Kênh đăng tin cho thuê căn hộ số 1: giá rẻ, chính chủ, đầy đủ tiện nghi. Cho thuê chung cư với nhiều mức giá, diện tích cho thuê khác nhau.",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+
+      await db.Category.create({
+        code: "CTPT",
+        value: "Cho thuê phòng trọ",
+        header: "Cho Thuê Phòng Trọ, Giá Rẻ, Tiện Nghi, Mới Nhất 2024",
+        subheader:
+          "Cho thuê phòng trọ - Kênh thông tin số 1 về phòng trọ giá rẻ, phòng trọ sinh viên, phòng trọ cao cấp mới nhất năm 2024. Tất cả nhà trọ cho thuê giá tốt nhất tại Việt Nam.",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+
+      await db.Category.create({
+        code: "NCT",
+        value: "Nhà cho thuê",
+        header: "Cho Thuê Nhà Nguyên Căn, Giá Rẻ, Chính Chủ, Mới Nhất 2024",
+        subheader:
+          "Cho thuê nhà nguyên căn, nhà riêng: giá rẻ, chính chủ, đầy đủ tiện nghi. Tìm thuê nhà với nhiều mức giá khác nhau, đa dạng loại diện tích. Đăng tin cho thuê nhà nhanh, hiệu quả tại phongtro123.com",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+
       resolve();
     } catch (error) {
       reject(error);
