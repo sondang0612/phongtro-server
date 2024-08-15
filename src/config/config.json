@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "db_phongtro123_9bjn_user",
-    "password": "dwh1gbEp8EQd5QABB2oxI22IKdtE8bba",
-    "database": "db_phongtro123_9bjn",
-    "host": "dpg-cn2sr1gl5elc73cit0lg-a.singapore-postgres.render.com",
+    "username": "default",
+    "password": "lPBCnVe0NiR3",
+    "database": "verceldb",
+    "host": "ep-twilight-heart-a1vc6nl7-pooler.ap-southeast-1.aws.neon.tech",
     "dialect": "postgres",
     "logging": false,
     "port": 5432,
@@ -15,10 +15,10 @@
     }
   },
   "production": {
-    "username": "db_phongtro123_9bjn_user",
-    "password": "dwh1gbEp8EQd5QABB2oxI22IKdtE8bba",
-    "database": "db_phongtro123_9bjn",
-    "host": "dpg-cn2sr1gl5elc73cit0lg-a.singapore-postgres.render.com",
+    "username": "default",
+    "password": "lPBCnVe0NiR3",
+    "database": "verceldb",
+    "host": "ep-twilight-heart-a1vc6nl7-pooler.ap-southeast-1.aws.neon.tech",
     "dialect": "postgres",
     "logging": false,
     "port": 5432,
