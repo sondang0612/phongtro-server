@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "default",
-    "password": "DqUT3ck2Mvot",
+    "password": "eJ1lQ7jmdIoW",
     "database": "verceldb",
-    "host": "ep-calm-tooth-a1iljmxc-pooler.ap-southeast-1.aws.neon.tech",
+    "host": "ep-patient-bush-a1kropik-pooler.ap-southeast-1.aws.neon.tech",
     "dialect": "postgres",
     "logging": false,
     "port": 5432,
@@ -16,9 +16,9 @@
   },
   "production": {
     "username": "default",
-    "password": "DqUT3ck2Mvot",
+    "password": "eJ1lQ7jmdIoW",
     "database": "verceldb",
-    "host": "ep-calm-tooth-a1iljmxc-pooler.ap-southeast-1.aws.neon.tech",
+    "host": "ep-patient-bush-a1kropik-pooler.ap-southeast-1.aws.neon.tech",
     "dialect": "postgres",
     "logging": false,
     "port": 5432,
