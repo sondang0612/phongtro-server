@@ -179,7 +179,7 @@ const insert = () =>
       await db.Category.create({
         code: "NCT",
         value: "Nhà cho thuê",
-        label: "nha-cho-tue",
+        label: "nha-cho-thue",
         header: "Cho Thuê Nhà Nguyên Căn, Giá Rẻ, Chính Chủ, Mới Nhất 2024",
         subheader:
           "Cho thuê nhà nguyên căn, nhà riêng: giá rẻ, chính chủ, đầy đủ tiện nghi. Tìm thuê nhà với nhiều mức giá khác nhau, đa dạng loại diện tích. Đăng tin cho thuê nhà nhanh, hiệu quả tại phongtro123.com",
